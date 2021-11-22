@@ -1,13 +1,11 @@
 package model;
 
-//import java.util.Collection;
-
 public class Programador {
 	private String nombre;
 	private String telefono;
 	private String direccion;
 	private String eMail;
-	
+
 	public Programador arriba;
 	public Programador izquierda;
 	public Programador derecha;
@@ -75,7 +73,7 @@ public class Programador {
 	public void setDerecha(Programador derecha) {
 		this.derecha = derecha;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Programador: "+getNombre()+

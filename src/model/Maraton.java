@@ -1,15 +1,11 @@
 package model;
 
-//import java.util.ArrayList;
-//import java.util.List;
-
 public class Maraton {
-	//private int numProgramadores;
+	private int numProgramadores;
 	private Programador programadorRaiz;
-	//private List<Programador> programadores;
 	
 	public Maraton() {
-		//programadores = new ArrayList<Programador>();
+		
 	}
 	
 	public Programador getProgramadorRaiz() {
@@ -20,12 +16,16 @@ public class Maraton {
 		this.programadorRaiz = programadorRaiz;
 	}
 	
-	
+	public int getNumProgramadores() {
+		return numProgramadores;
+	}
+
 	/**
 	  * Retorna una colección con los nombres de todos los programadores, ordenados alfabéticamente en orden ascendente 
 	  * @param acumulado colección donde se van agregando los nombres de los programadores ordenadamente
 	  */
 	 public void inorden(String nombre, String telefono, String direccion,String eMail){
+		 numProgramadores++;
 		 Programador nuevoProgramador = new Programador(nombre,telefono,direccion,eMail);
 			if(programadorRaiz==null) {
 				programadorRaiz = nuevoProgramador;
@@ -52,7 +52,6 @@ public class Maraton {
 			}
 	 }
 	 
-	 
 	 /**
 	  * Retorna la altura del árbol de programadores que comienza en este nodo
 	  * @return altura del árbol que comienza en este nodo
@@ -63,48 +62,4 @@ public class Maraton {
 	   }
 	   return 0;
 	}
-
-
-	
-	
-	/*
-	public void agregarProgramador(String nombre, String telefono, String direccion, String eMail) {
-		programadores.add(new Programador(nombre,telefono,direccion,eMail));
-	}
-	
-	public List<Programador> getProgramadores(){
-		return this.programadores;
-	}
-	
-	*/
-	/*
-	public void agregarProgramador(String nombre, String telefono, String direccion, String eMail) {
-		Programador nuevoProgramador = new Programador(nombre,telefono,direccion,eMail);
-		if(programadorRaiz==null) {
-			programadorRaiz = nuevoProgramador;
-		}else {
-			agregarProgramador(programadorRaiz,nuevoProgramador);
-		}
-	}
-	
-	//Ordenar alfabeticamente
-	private void agregarProgramador(Programador current, Programador nuevoProgramador) {
-		if ((nuevoProgramador.getNombre().compareToIgnoreCase(current.getNombre())) <= 0) {
-			if (current.getIzquierda() == null) {
-				current.setIzquierda(nuevoProgramador);
-				current.setArriba(current);
-			}else {
-				agregarProgramador(current.getIzquierda(),nuevoProgramador);
-			}
-		}else {
-			if(current.getDerecha()==null) {
-				current.setDerecha(nuevoProgramador);
-				nuevoProgramador.setArriba(current);
-			}else {
-				agregarProgramador(current.getDerecha(),nuevoProgramador);
-			}
-		}
-	}
-	*/
-	
 }
